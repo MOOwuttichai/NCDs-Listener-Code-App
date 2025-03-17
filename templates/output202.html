@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCDs Listener</title>
+
+  <link rel="stylesheet" href="../static/css/NCDs.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="imgncd">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(100,205,138,1)"><path 
+            fill="none"d="M0 0h24v24H0z"></path><path d="M21 8C22.1046 8 23 8.89543 23 10V14C23 15.1046 
+            22.1046 16 21 16H19.9381C19.446 19.9463 16.0796 23 12 23V21C15.3137 21 18 18.3137 18 15V9C18 
+            5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9V16H3C1.89543 16 1 15.1046 1 14V10C1 8.89543 
+            1.89543 8 3 8H4.06189C4.55399 4.05369 7.92038 1 12 1C16.0796 1 19.446 4.05369 19.9381 8H21ZM7.75944 
+            15.7849L8.81958 14.0887C9.74161 14.6662 10.8318 15 12 15C13.1682 15 14.2584 14.6662 15.1804 
+            14.0887L16.2406 15.7849C15.0112 16.5549 13.5576 17 12 17C10.4424 17 8.98882 16.5549 7.75944 15.7849Z"></path></svg>
+        
+        </div> 
+        
+        <div class="word">
+          <div class="h1">NCDs </br> Listener</div> 
+        </div>
+      </div>
+      <div class="sub">
+          <ul>
+            <form action="/page1_4" method="post">
+              <button>
+                <li><i class="ri-download-2-fill"></i>
+                <a>Data Selection</a></li>
+              </button>
+            </form>
+
+            <form action="/page2_4.py"  method="post">
+              <button>
+                <li><i class="ri-table-fill"></i>
+                <a>Data Preparation</a></button></li>
+            </form>
+          
+            <form action="/page3.py" method="post">
+              <button>
+                <li><i class="ri-dashboard-2-fill"></i>
+                <a>Data Visualization</a></button></li>
+            </form>
+          </ul>
+      </div> 
+    </div>   
+  </header>
+
+<div id="page">
+  <div id="tab">
+    <div class="table-container">
+      <h2>Results</h2>
+      <p> {{ number_of_rows }} Rows x {{ number_of_columns }} Columns</p>
+      <form method="POST" action="/sort">
+        <label for="sort_column">เรียงลำดับตาม:</label>
+        <select id="sort_column" name="sort_column">
+          {% for option in sort_options %}
+          <option value="{{ option }}">{{ option }}</option>
+          {% endfor %}
+        </select>
+        <label for="HOW">เรียงลำดับจาก:</label>
+        <select name="HOW" id="HOW">
+          <option value="มากไปน้อย">มากไปน้อย</option>
+          <option value="น้อยไปมาก">น้อยไปมาก</option>
+      </select>
+        <button type="submit">เรียงลำดับ</button>
+      </form>
+
+      <p>{% for table in tables %}
+
+        {{ table|safe }}
+        {% endfor %}</p>
+    </div>
+  </div>
+
+  <div id="ad">
+    <div class="table-container">
+      <h2>Descriptive Statistics</h2>
+      <p>{% for table in tables_descript %}
+        {{ table|safe }}
+        {% endfor %}</p>
+        <p>จำนวนชื่อผู้ที่มาเเสดงความคิดเห็น = {{count_user}}</p>
+        <p>จำนวนความคิดเห็นทั้งหมด = {{count_comment}}</p>
+    </div>
+
+    <img src="{{ url_for('wordcloud') }}" alt="WordCloudSymptoms" style="width: 620px; height: 300px;">
+  </div>
+</div>
+
+<div id="des">
+  <div class="container">
+    <div class="row">
+      <h2 align="center">เพิ่มโรคและอาการ</h2>
+      <br />
+      <div class="col-md-6" style="margin:0 auto; float:none;">
+        <form action = "/ajax_add" method="post" id="reg_form">
+          <div class="form-group">
+            <label>Enter your disease</label>
+            <input type="text" name="skill" id="skill" class="form-control" style="direction:rtl" />
+          </div>
+          <div class="form-group">
+            <button type="button" name="select_disease" id="select_disease" class="select_disease"> show all disease</button>
+          </div>
+          <div class="form-group">
+            <label>Enter your symptoms</label>
+            <input type="text" name="symptom" id="symptom" class="form-control" style="direction:rtl" />
+          </div>
+          <div class="form-group">
+            <button type="button" name="select_symptoms" id="select_symptoms" class="select_symptoms"> show all symptoms</button>
+          </div>
+          <div class="form-group">
+            <input type="hidden" name="sum_ch" id="sum_ch" class="sum_ch" value="3485"/>
+          </div>
+          <div class="form-group">
+            <button type="button" name="select_all" id="select_all" class="select_all"> show all disease&symptoms</button>
+          </div>
+          <div class="form-group">
+          <button type="submit" name="submit" id="submit" class="btn btn-info">Submit</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('#skill').tokenfield({
+      autocomplete: {
+        source: [{% for skill in skills %} '{{skill}}', {% endfor %}],
+    delay: 100
+        },
+    showAutocompleteOnFocus: true,
+        })
+    })
+  $(document).ready(function () {
+    $('#symptom').tokenfield({
+      autocomplete: {
+        source: [{% for symptom in symptoms %} '{{symptom}}', {% endfor %}],
+    delay: 100
+        },
+    showAutocompleteOnFocus: true
+        })
+    })
+    $('#reg_form').on('submit', function (event) {
+        var form_data = $(this).serialize();
+        $('#submit').attr("disabled", "disabled");
+        $.ajax({
+          url: "/ajax_add",
+          method: "POST",
+          data: form_data,
+          beforeSend: function () {
+            $('#submit').val('Submitting...');
+          }
+        });
+      }
+    );
+  $('#skill').on('tokenfield:createtoken', function (event) {
+    var existingTokens = $(this).tokenfield('getTokens');
+    $.each(existingTokens, function (index, token) {
+      if (token.value === event.attrs.value)
+        event.preventDefault();
+    });
+  });
+  $('#symptom').on('tokenfield:createtoken', function (event) {
+    var existingTokens = $(this).tokenfield('getTokens');
+    $.each(existingTokens, function (index, token) {
+      if (token.value === event.attrs.value)
+        event.preventDefault();
+    });
+  });
+
+$(document).ready(function () {
+  $('button.select_disease').click(function () {
+    var data = ''
+    if ($.trim($('#skill').val()).length == 0) {
+        $('#skill').tokenfield('setTokens', [{% for skill in skills %} '{{skill}}', {% endfor %}]);
+    } else if ($.trim($('#skill').val()).length > 0) {
+        $('#skill').tokenfield('setTokens', [$('#skill').val(data)]);
+          }
+        });
+      });
+
+$(document).ready(function () {
+    $('button.select_symptoms').click(function () {
+      var data = ''
+      if ($.trim($('#symptom').val()).length == 0) {
+        $('#symptom').tokenfield('setTokens', [{% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+      } else if ($.trim($('#symptom').val()).length > 0) {
+        $('#symptom').tokenfield('setTokens', [$('#symptom').val(data)]);
+            }
+          });
+        });
+
+ $(document).ready(function () {
+    $('button.select_all').click(function () {
+      var data = ''
+      if ($.trim($('#skill').val()).length == 0) {
+        if ($.trim($('#symptom').val()).length == 0) {
+          $('#skill').tokenfield('setTokens', [{% for skill in skills %} '{{skill}}', {% endfor %}]);
+    $('#symptom').tokenfield('setTokens', [{% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+        } else if ($.trim($('#symptom').val()).length > 0) {
+    $('#symptom').tokenfield('setTokens', [$('#symptom').val(), {% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+  $('#skill').tokenfield('setTokens', [{% for skill in skills %} '{{skill}}', {% endfor %}]);
+        }
+      } else if ($.trim($('#skill').val()).length > 0) {
+    if ($.trim($('#symptom').val()).length == 0) {
+      $('#skill').tokenfield('setTokens', [$('#skill').val(), {% for skill in skills %} '{{skill}}', {% endfor %}]);
+  $('#symptom').tokenfield('setTokens', [{% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+          } else if ($.trim($('#symptom').val()).length > 0) {
+    $('#skill').tokenfield('setTokens', [$('#skill').val(data)]);
+    $('#symptom').tokenfield('setTokens', [$('#symptom').val(data)]);
+  }
+      }
+  });
+ });
+
+</script>
+<script>
+  function myF_clik_for_page3() {
+    document.getElementById("myBtn").disabled = false;
+  }
+  </script>
+  
+
+  <form id="next" action="/page3.py" method="post">
+    <div class="button-container">
+  <button type="submit" class="createdash" formaction="/page3.py" onclick="myF_clik_for_page3">Create Dashboard</button>
+    </div>
+  </form>
+  <!-- <form id="next" action="/page3.py" method="post">
+    <div>
+      <button  type="submit" name="next_p" id="next_p" class="next_p" formaction="/page3.py" > next_p </button>
+  </div>
+</form> -->
+
+
+<!-- </form>
+ -->
+
+<!-- import pandas as pd
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+
+# Download necessary NLTK data files
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+# Load your data
+data_prep = pd.read_csv('data_commentsred_docter.csv')
+
+# Combine all text into a single string
+text = ' '.join(data_prep['comments'].str.lower())
+
+# Tokenize the text
+tokens = word_tokenize(text)
+
+# Remove stop words and lemmatize
+stop_words = set(stopwords.words('english'))
+lemmatizer = WordNetLemmatizer()
+filtered_words = [lemmatizer.lemmatize(w) for w in tokens if w.isalpha() and w not in stop_words]
+
+# Create a word cloud
+wordcloud = WordCloud(
+    stopwords=stop_words,
+    background_color="white",
+    width=1024,
+    height=768,
+    max_words=500,
+    colormap='plasma',
+    scale=3,
+    font_step=4,
+    collocations=False,
+    margin=2
+).generate(' '.join(filtered_words))
+
+# Save the word cloud to a file
+wordcloud.to_file("wordcloud.png") -->
+<header>
+</header>
+
+</html>

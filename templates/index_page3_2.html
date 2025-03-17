@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Python Flask Insert Bootstrap Tokenfield Tag Data using Jquery Ajax and Mysql database</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;  
+  }
+  /* Style the icon */
+  .input-group-text {
+      width: 30px;
+      text-align: center;
+    }
+
+    /* Hide the default checkmark icon */
+    .form-control:focus + .input-group-append .input-group-text {
+      border: none;
+    }
+
+    /* Show the selected tag icon */
+    .form-control:focus + .input-group-append .input-group-text i.selected-tag-icon {
+      display: block;
+    }
+  </style>
+ </head>
+ <body>
+    <br />
+    <div class="container">
+        <div class="row">
+         <h2 align="center">Python Flask Insert Bootstrap Tokenfield Tag Data using Jquery Ajax and Mysql database</h2>
+          <br />
+          <div class="col-md-6" style="margin:0 auto; float:none;">
+           <span id="success_message"></span>
+           <form method="post" id="reg_form">
+            <div class="form-group">
+             <label>Enter your cancer</label>
+             <input type="text" name="skill" id="skill" class="form-control" style="direction:rtl"
+             value="{% for skill in skills %} {{skill}}, {% endfor %}"/>
+            </div>
+            <div class="form-group">
+                <label>Enter your symptoms</label>
+                <input type="text" name="symptom" id="symptom" class="form-control" style="direction:rtl"/>
+            </div>
+            <div class="form-group">
+                <input type="hidden" id="custId" name="custId" value="3487"/>
+            </div>
+            <div class="form-group">
+             <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" onclick="enableBtn()" />
+            </div>
+            <div class="form-group">
+              <button  type="button" name="select_all" id="select_all" class="select_all" > select_all </button>
+            </div>
+           </form>
+            <form id="next" action="/page3.py" method="post">
+            <div>
+              <button  type="submit" name="next_p" id="next_p" class="next_p" formaction="/page3.py" > next_p </button>
+          </div>
+        </form>
+         </div>
+        </div>
+       </div>
+    <script>
+    $(document).ready(function(){
+       $('#skill').tokenfield({
+        autocomplete: {
+        source: [{% for skill in skills %} '{{skill}}', {% endfor %}],
+        delay: 100
+        },
+        showAutocompleteOnFocus: true,
+        })
+    })
+    $(document).ready(function(){
+       $('#symptom').tokenfield({
+        autocomplete: {
+        source: [{% for symptom in symptoms %} '{{symptom}}', {% endfor %}],
+        delay: 100
+        },
+        showAutocompleteOnFocus: true
+        })
+    })
+    $('#skill').on('tokenfield:createtoken', function (event) {
+	var existingTokens = $(this).tokenfield('getTokens');
+	$.each(existingTokens, function(index, token) {
+		if (token.value === event.attrs.value)
+			event.preventDefault();
+	});
+    });
+    $('#symptom').on('tokenfield:createtoken', function (event) {
+	var existingTokens = $(this).tokenfield('getTokens');
+	$.each(existingTokens, function(index, token) {
+		if (token.value === event.attrs.value)
+			event.preventDefault();
+	});
+    });
+
+    $('#reg_form').on('submit', function(event){
+    event.preventDefault();
+    if($.trim($('#skill').val()).length == 0) {
+      alert("Please Enter Your cancer");
+      return false;
+    }else if($.trim($('#symptom').val()).length == 0) {
+      alert("Please Enter Your symptom");
+      return false;
+    }else{
+        var form_data = $(this).serialize();
+        $('#submit').attr("disabled","disabled");
+        $.ajax({
+            url:"/ajax_add",
+            method:"POST",
+            data:form_data,
+            beforeSend:function(){
+            $('#submit').val('Submitting...');
+            },
+            success:function(data){
+              if(data != '') {
+                $('#skill').tokenfield('setTokens',[]);
+                $('#symptom').tokenfield('setTokens',[]);
+                $('#success_message').html(data);
+                $('#submit').attr("disabled", false);
+                $('#submit').val('Submit');
+              }
+            }
+        });
+        setInterval(function(){
+          $('#success_message').html('');
+        }, 5000);
+    }
+  });
+  $(document).ready(function(){
+    $('button.select_all').click(function(){
+      var data = ''
+      if ($.trim($('#skill').val()).length == 0) {
+        if ($.trim($('#symptom').val()).length == 0){
+          $('#skill').tokenfield('setTokens',[{% for skill in skills %} '{{skill}}', {% endfor %}]);
+          $('#symptom').tokenfield('setTokens',[{% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+        } else if($.trim($('#symptom').val()).length > 0) {
+          $('#symptom').tokenfield('setTokens',[$('#symptom').val(),{% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+          $('#skill').tokenfield('setTokens',[{% for skill in skills %} '{{skill}}', {% endfor %}]);
+        }
+      } else if($.trim($('#skill').val()).length > 0) {
+            if ($.trim($('#symptom').val()).length == 0){
+              $('#skill').tokenfield('setTokens',[$('#skill').val(),{% for skill in skills %} '{{skill}}', {% endfor %}]);
+              $('#symptom').tokenfield('setTokens',[{% for symptom in symptoms %} '{{symptom}}', {% endfor %}]);
+          } else if($.trim($('#symptom').val()).length > 0) {
+            $('#skill').tokenfield('setTokens',[$('#skill').val(data)]);
+            $('#symptom').tokenfield('setTokens',[$('#symptom').val(data)]);
+          }
+      }
+  });
+ });
+    </script>
+ </body>
+</html>

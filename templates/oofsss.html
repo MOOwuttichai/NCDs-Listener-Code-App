@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat with LLM</h1>
+        <form id="llmForm">
+            <textarea id="userInput" placeholder="Type your message here..."></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="response" id="responseContainer"></div>
+    </div>
+
+    <script>
+        document.getElementById('llmForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const userInput = document.getElementById('userInput').value;
+            if (userInput.trim() === '') return;
+
+            // Display "loading..." text
+            const responseContainer = document.getElementById('responseContainer');
+            responseContainer.textContent = 'Loading...';
+
+            // Send the input to the Python backend
+            const response = await fetch('/api/llm', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                responseContainer.textContent = data.response;
+            } else {
+                responseContainer.textContent = 'An error occurred.';
+            }
+        });
+    </script>
+</body>
+</html>

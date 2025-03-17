@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCDs Listener</title>
+
+<link rel="stylesheet" href="../static/css/NCDs.css" />
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <a href="/page1_3">
+    <div class="nav">
+      <div class="imgncd">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(100,205,138,1)"><path 
+            fill="none"d="M0 0h24v24H0z"></path><path d="M21 8C22.1046 8 23 8.89543 23 10V14C23 15.1046 
+            22.1046 16 21 16H19.9381C19.446 19.9463 16.0796 23 12 23V21C15.3137 21 18 18.3137 18 15V9C18 
+            5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9V16H3C1.89543 16 1 15.1046 1 14V10C1 8.89543 
+            1.89543 8 3 8H4.06189C4.55399 4.05369 7.92038 1 12 1C16.0796 1 19.446 4.05369 19.9381 8H21ZM7.75944 
+            15.7849L8.81958 14.0887C9.74161 14.6662 10.8318 15 12 15C13.1682 15 14.2584 14.6662 15.1804 
+            14.0887L16.2406 15.7849C15.0112 16.5549 13.5576 17 12 17C10.4424 17 8.98882 16.5549 7.75944 15.7849Z"></path></svg>
+        
+        </div> 
+        
+        <div class="word">
+          <div class="h1">NCDs </br> Listener</div> 
+        </div>
+      </div>
+    </a>
+      <div class="sub">
+          <ul>
+            <form action="/page1_3" method="post">
+              <button>
+                <li><i class="ri-download-2-fill"></i>
+                <a>Data Selection</a></li>
+              </button>
+            </form>
+
+            <form action="/page2_3.py"  method="post">
+              <button>
+                <li><i class="ri-table-fill"></i>
+                <a>Data Preparation</a></button></li>
+            </form>
+          
+            <form action="/page3.py" method="post">
+              <button disabled>
+                <li><i class="ri-dashboard-2-fill"></i>
+                <a>Data Visualization</a></button></li>
+            </form>
+          </ul>
+      </div> 
+    </div>   
+  </header>
+
+  <section class="hero">
+    <div class="h2">Choose your Selection</div>
+  </section>
+  <div class="row">
+    <div class="column" style="background-color:white;">
+      <h4>Use URL</h4>
+      <br>
+      <a href="/url_sc" method="post">
+        <svg class="img_url" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"></path><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path></svg>      </a>
+    </div>
+    <div class="column" style="background-color:white;">
+      <h4>Use File</h4>
+      <br>
+      <a href="/use_File" method="post">
+        <svg class="img_csv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"></path><path d="M13 12H16L12 16L8 12H11V8H13V12ZM15 4H5V20H19V8H15V4ZM3 2.9918C3 2.44405 3.44749 2 3.9985 2H16L20.9997 7L21 20.9925C21 21.5489 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918Z"></path></svg></a>
+    </div>
+  </div>
+</body>
+<div class="footer">
+  
+</div> 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('pop');
+    const acceptBtn = document.getElementById('acceptBtn');
+
+    // Show the pop-up
+    popup.style.display = 'block';
+
+    // When user accepts, hide the pop-up and show main content
+    acceptBtn.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+  });
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ปุ่มควบคุม</title>
+</head>
+<body>
+  <button id="button1" disabled>ปุ่ม 1</button>
+  <button id="button2" disabled>ปุ่ม 2</button>
+  <script>
+    const enableButton1 = () => {
+      localStorage.setItem('enabledButton1', true);
+      updateButtonState();
+    };
+
+    const enableButton2 = () => {
+      localStorage.setItem('enabledButton2', true);
+      updateButtonState();
+    };
+
+    const updateButtonState = () => {
+      const button1Enabled = localStorage.getItem('enabledButton1') === 'true';
+      const button2Enabled = localStorage.getItem('enabledButton2') === 'true';
+
+      document.getElementById('button1').disabled = !button1Enabled;
+      document.getElementById('button2').disabled = !button2Enabled;
+    };
+
+    // ตรวจสอบสถานะปุ่มเริ่มต้น
+    updateButtonState();
+  </script>
+</body>
+</html>

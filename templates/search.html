@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <style>
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-button {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Search</h1>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" id="search-term" placeholder="Search products">
+        <button class="search-button" id="search-button">Search</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#search-button').click(function() {
+                var searchTerm = $('#search-term').val();
+                if (searchTerm) {
+                    window.location.href = '/search?q=' + searchTerm;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

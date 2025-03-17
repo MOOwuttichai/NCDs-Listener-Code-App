@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCDs Listener</title>
+    
+    <link rel="stylesheet" href="../static/css/NCDs.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+  
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="NCDs Listener logo"><h1>NCDs Listener</h1>
+        
+      </div>
+    </nav>
+    <div class="sub">
+     <ul>
+       <li><a href="#">Home</a></li>
+       <li><a href="#">Table</a></li>
+       <li><a href="#">Dashboard</a></li>
+     </ul>
+   </div>
+
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>NCD'S LISTENER</h2>
+    </section>
+    <section class="input-section">
+      <form action="/process.py" method="post">
+      <label for="url">Paste URL</label>      
+      <input type="text" id="url" name="url" placeholder="http://">
+	    <button type="submit" class="Go">Go!</button>
+    </section>
+  </main>
+
+
+</html>

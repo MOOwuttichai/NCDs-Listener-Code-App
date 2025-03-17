@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <div class="button">
+                  <input type="button" id="lesen" value="Lesen" />
+              </div>
+              
+              <div class="text">
+                  Lorem Ipsum <br />
+              </div>
+       </head>
+       <script>
+            $(document).ready(function() {
+            $("#lesen").click(function() {
+                  $.ajax({
+                        url : "D:\new_pro\comment.txt",
+                        dataType: "text",
+                        success : function (data) {
+                        $(".text").html(data);
+                        }
+                  });
+            });
+            });
+       </script>
+</html>

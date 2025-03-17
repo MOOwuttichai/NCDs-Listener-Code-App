@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCDs Listener</title>
+
+<link rel="stylesheet" href="../static/css/NCDs.css" />
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+    #myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    display :none;
+  }
+    </style>
+</head>
+  
+<header>
+  <div class="nav">
+    <div class="imgncd">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(100,205,138,1)"><path 
+          fill="none"d="M0 0h24v24H0z"></path><path d="M21 8C22.1046 8 23 8.89543 23 10V14C23 15.1046 
+          22.1046 16 21 16H19.9381C19.446 19.9463 16.0796 23 12 23V21C15.3137 21 18 18.3137 18 15V9C18 
+          5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9V16H3C1.89543 16 1 15.1046 1 14V10C1 8.89543 
+          1.89543 8 3 8H4.06189C4.55399 4.05369 7.92038 1 12 1C16.0796 1 19.446 4.05369 19.9381 8H21ZM7.75944 
+          15.7849L8.81958 14.0887C9.74161 14.6662 10.8318 15 12 15C13.1682 15 14.2584 14.6662 15.1804 
+          14.0887L16.2406 15.7849C15.0112 16.5549 13.5576 17 12 17C10.4424 17 8.98882 16.5549 7.75944 15.7849Z"></path></svg>
+      
+      </div> 
+      
+      <div class="word">
+        <div class="h1">NCDs </br> Listener</div> 
+      </div>
+    </div>
+    <div class="sub_">
+        <ul>
+          <form action="/page1_3" method="post">
+          <button>
+              <li><a><i class="ri-home-smile-fill">
+              </i>Home</a></li>
+              </button>
+            </form>
+
+            <form action="/page2_3.py"  method="post">
+                <button>
+                <li><a><i class="ri-table-fill">
+                </i>Prepare</a></li></button>
+                </form>
+    
+            <form action="/page3_2.py" method="post">
+                <button>
+                <li><a><i class="ri-dashboard-2-fill">
+                </i>Dashboard</a></li></button>
+                </form>
+          </ul>
+    </div> 
+  </div>   
+</header>
+
+<section class="hero">
+    <div class="h2">NCD'S LISTENER</div>
+  </section>
+  <section class="input-section">
+    <form action="/process.py" method="post">
+    <label for="url">Paste URL</label>      
+    <input type="text" id="url" name="url" placeholder="http://">
+    <br>
+    <br>
+    <button onclick="myFunction()" class="center" type="button">advance option</button>
+    <div id="myDIV">
+        <label for="x"><b>xpath ความคิดเห็นเพิ่มเติม</b></label>
+        <input type="text" placeholder="xpath_ความคิดเห็นเพิ่มเติม" id="x" name="x" value="/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div/div/div[2]/div[3]/div[52]/div[1]/div/div[2]/span/span" required>
+        <label for="a"><b>xpath_loop ความคิดเห็นเพิ่มเติม</b></label>
+        <input type="text" placeholder="xpath_loop" id="a" name="a" value="50" required>
+        <label for="aoa"><b>xpath เปิดเพิ่มเติม</b></label>
+        <input type="text" placeholder="xpath_เปิดเพิ่มเติม" id="aoa"name="aoa" value="/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div/div/div[2]/div[3]/div[1]/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/div/span/div[2]/div/div" required>
+        <label for="r"><b>xpath_loop เปิดเพิ่มเติม</b></label>
+        <input type="text" placeholder="xpath_loop" id="r"name="r" value="1" required>
+      </div>
+    <button type="submit" class="url">Go!</button>
+  </section>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+    </script>
+</main>
+
+<header>
+
+</header>
+
+
+</html>

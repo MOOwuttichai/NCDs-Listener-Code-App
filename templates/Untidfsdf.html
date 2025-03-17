@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCDs Listener</title>
+
+<link rel="stylesheet" href="../static/css/NCDs.css" />
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="imgncd">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(100,205,138,1)"><path 
+            fill="none"d="M0 0h24v24H0z"></path><path d="M21 8C22.1046 8 23 8.89543 23 10V14C23 15.1046 
+            22.1046 16 21 16H19.9381C19.446 19.9463 16.0796 23 12 23V21C15.3137 21 18 18.3137 18 15V9C18 
+            5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9V16H3C1.89543 16 1 15.1046 1 14V10C1 8.89543 
+            1.89543 8 3 8H4.06189C4.55399 4.05369 7.92038 1 12 1C16.0796 1 19.446 4.05369 19.9381 8H21ZM7.75944 
+            15.7849L8.81958 14.0887C9.74161 14.6662 10.8318 15 12 15C13.1682 15 14.2584 14.6662 15.1804 
+            14.0887L16.2406 15.7849C15.0112 16.5549 13.5576 17 12 17C10.4424 17 8.98882 16.5549 7.75944 15.7849Z"></path></svg>
+        
+        </div> 
+        
+        <div class="word">
+          <div class="h1">NCDs </br> Listener</div> 
+        </div>
+      </div>
+      <div class="sub">
+          <ul>
+            <form action="/page1_2" method="post">
+              <button>
+                <li><i class="ri-download-2-fill"></i>
+                <a>Data Selection</a></li>
+              </button>
+            </form>
+
+            <form action="/page2_2.py"  method="post">
+              <button>
+                <li><i class="ri-table-fill"></i>
+                <a>Data Preparation</a></button></li>
+            </form>
+          
+            <form action="/page3_2.py" method="post">
+              <button disabled>
+                <li><i class="ri-dashboard-2-fill"></i>
+                <a>Data Visualization</a></button></li>
+            </form>
+          </ul>
+      </div> 
+    </div>   
+  </header>
+
+
+<body>
+  <section class="hero">
+    <div class="h2">Choose your Selection</div>
+  </section>
+  <div class="row">
+    <div class="column" style="background-color:white;">
+      <h2>Use URL</h2>
+      <br>
+      <a href="/url_sc" method="post">
+        <img src="https://th.bing.com/th/id/R.90a4eb1acced5e51b1b7bba33df2fce0?rik=o4ITzEg8J7pkPw&pid=ImgRaw&r=0" alt="Click to use url data" class="img_url">
+      </a>
+    </div>
+    <div class="column" style="background-color:white;">
+      <h2>Use File</h2>
+      <br>
+      <a href="/use_File" method="post">
+        <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3260130/csv-icon-md.png" alt="Click to visit use html file" class="img_csv">
+        </a>
+    </div>
+  </div>
+</body>
+
+<br >
+
+
+
+<div id="pop" class="pop">
+  <div class="pop-content">
+    <h1 class="head" style="color: green">Welcome to NCDs Listener!</h1>
+      <br>
+      <div class="popcontainer">
+        <p class="topic" style="font-weight: bolder;">ข้อตกลงในการใช้ซอฟต์แวร์</p>
+        <p class="topic">ซอฟต์แวร์นี้เป็นผลงานที่พัฒนาขึ้นโดย นายวุฒิชัย คำนา และ นายรัชชานนท์ ทิพย์พิมานพร จาก มหาวิทยาลัยขอนแก่น ภายใต้การดูแลของ ผศ.ดร.ธนพงศ์ อินทระ ภายใต้โครงการ NCDs Listener: เว็บแอปพลิเคชันการฟังเสียงบนสื่อสังคมออนไลน์สำหรับผู้ป่วยกลุ่มโรคไม่ติดต่อเรื้อรัง (NCDs) 
+        ซึ่งสนับสนุนโดย สํานักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ โดยมีวัตถุประสงค์เพื่อส่งเสริมให้นักเรียนและนักศึกษาได้เรียนรู้และฝึกทักษะในการพัฒนาซอฟต์แวร์ 
+        ลิขสิทธิ์ของซอฟต์แวร์นี้จึงเป็นของผู้พัฒนา ซึ่งผู้พัฒนาได้อนุญาตให้สํานักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ 
+        เผยแพร่ซอฟต์แวร์นี้ตาม “ต้นฉบับ” โดยไม่มี การแก้ไขดัดแปลงใด ๆ ทั้งสิ้น ให้แก่บุคคลทั่วไปได้ใช้เพื่อประโยชน์ส่วนบุคคลหรือประโยชน์ทางการศึกษาที่ไม่มีวัตถุประสงค์ในเชิงพาณิชย์ 
+        โดยไม่คิดค่าตอบแทนการใช้ซอฟต์แวร์ ดังนั้น สํานักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ จึงไม่มีหน้าที่ในการดูแลบํารุงรักษาจัดการอบรมการใช้งาน หรือพัฒนาประสิทธิภาพซอฟต์แวร์ 
+        รวมทั้ง ไม่รับรองความถูกต้องหรือประสิทธิภาพการทํางานของซอฟต์แวร์ ตลอดจนไม่รับประกัน ความเสียหายต่าง ๆ อันเกิดจากการใช้ซอฟต์แวร์นี้ทั้งสิ้น</p>
+        <br>
+        <p class="topic" style="font-weight: bolder;">License Agreement</p>
+        <p class="topic">This software is a work developed by Mr. Wuttichai Khamna and Mr. Ratchanont Thippimanporn from Khon Kaen university under the provision of Asst. Prof. Dr.Thanapong Intharah  under NCDs Listener: Social Listening Web Application for Non-Communicable Disease (NCDs) Patients, 
+        which has been supported by the National Science and Technology Development Agency (NSTDA), in order to encourage pupils and students to Learn and practice 
+        their skills in developing software. Therefore, the intellectual property of this software shall belong to the developer and the developer gives NSTDA a permission to distribute 
+        this software as an “as is” and non-modified software for a temporary and non-exclusive use without remuneration to anyone for his or her own purpose or academic purpose, 
+        which are not commercial purposes. In this connection, NSTDA shall not be responsible to the user for taking care, maintaining, training, or developing the efficiency of this software. 
+        Moreover, NSTDA shall not be liable for any error, software efficiency and damages in connection with or arising out of the use of the software.</p>
+        <br>
+      <button id="acceptBtn" type="button">Accept</button>
+    </div>
+  </div> 
+</div> 
+
+</body>
+<script>
+    myButton.addEventListener(
+        "click",
+        function () {
+            myPopup.classList.add("show");
+        }
+    );
+    closePopup.addEventListener(
+        "click",
+        function () {
+            myPopup.classList.remove(
+                "show"
+            );
+        }
+    );
+    window.addEventListener(
+        "click",
+        function (event) {
+            if (event.target == myPopup) {
+                myPopup.classList.remove(
+                    "show"
+                );
+            }
+        }
+    );
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const popup = document.getElementById('pop');
+      const acceptBtn = document.getElementById('acceptBtn');
+  
+      // Show the pop-up
+      popup.style.display = 'block';
+  
+      // When user accepts, hide the pop-up and show main content
+      acceptBtn.addEventListener('click', function() {
+        popup.style.display = 'none';
+      });
+    });
+  </script>
+</html>
