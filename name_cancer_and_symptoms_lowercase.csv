@@ -1,0 +1,101 @@
+﻿index,name_cancarTH,cancer_names_en,Key_symptoms_TH,Values_symptoms_TH,Key_symptoms_EN,Valuessymptoms_EN
+0,มะเร็งกระเพาะปัสสวะ,bladder cancer,อ่อนเพลีย,['อ่อนเพลีย'],fatigue,['fatigue']
+1,มะเร็งเยื่อบุโพรงมดลูก,endometrial cancer,เหนื่อยง่าย,"['เหนื่อยง่าย', 'เหนื่อย', 'เพลีย', 'เหนื่อยหอบ']",tiredness,"['fatigue', 'tiredness', 'lethargy', 'shortness of breath']"
+2,มะเร็งปากมดลูก,cervical cancer,คันเนื้อคันตัว,"['คันเนื้อคันตัว', 'คัน', 'คันตัว', 'คันตามตัว']",itching,"['itching', 'itching skin']"
+3,มะเร็งเม็ดเลือดขาว,leukemia,อาการร้อน,"['อาการร้อน','ร้อน', 'อาการรัอน', 'ตัวร้อน']",feverishness,"['feverishness', 'fever']"
+4,มะเร็งตับ,liver cancer,เจ็บปวด,"['เจ็บปวด', 'เจ็บ', 'อาการเจ็บปวด']",pain,"['pain', 'aches']"
+5,มะเร็งตับอ่อน,pancreatic cancer,อาการชา,"['อาการชา', 'ชา']",numbness,"['numbness', 'tingling']"
+6,มะเร็งต่อมลูกหมาก,prostate cancer,เบื่ออาหาร,['เบื่ออาหาร'],loss of appetite,['loss of appetite']
+7,มะเร็งกระเพาะปัสสาวะ,stomach cancer,น้ำหนักลดโดยไม่ทราบสาเหตุ,"['น้ำหนักลดโดยไม่ทราบสาเหตุ', 'น้ำหนักลด', 'น้ำหนักลดลงเร็วมาก']",unexplained weight loss,"['unexplained weight loss', 'weight loss', 'rapid weight loss']"
+8,มะเร็งกระเพาะอาหาร,esophageal cancer,ไข้เรื้อรัง,"['ไข้เรื้อรัง', 'ไข้', 'เป็นไข้']",chronic fever,"['chronic fever', 'fever']"
+9,มะเร็งหลอดอาหาร,breast cancer,เหงื่อออกตอนกลางคืน,"['เหงื่อออกตอนกลางคืน', 'เหงื่อออกตอนดึก', 'เหงื่อออก']",night sweats,"['night sweats', 'sweating']"
+10,มะเร็งเต้านม,lung cancer,ปวดเมื่อย,"['ปวดเมื่อย','ปวดเมื่อยตามร่างกาย', 'เมื่อย']",body aches,"['body aches', 'aches']"
+11,มะเร็งปอด,colorectal cancer,บวมหรือต่อมน้ำเหลืองโต,"['บวมหรือต่อมน้ำเหลืองโต', 'ต่อมน้ำเหลืองโต', 'บวมน้ำเหลืองโต']",swollen lymph nodes,['swollen lymph nodes']
+12,มะเร็งลำไส้ใหญ่,ovarian cancer,ปวดท้อง,['ปวดท้อง'],stomach pain,['stomach pain']
+13,มะเร็งรังไข่,oral cancer,เจ็บคอ,['เจ็บคอ'],sore throat,['sore throat']
+14,มะเร็งช่องปาก,thyroid cancer,ปวดใต้รักแร้,"['ปวดใต้รักแร้', 'ปวดรักแร้']",swollen armpits,['swollen armpits']
+15,มะเร็งต่อมไทรอยด์,lymphoma,ปวดเอว,['ปวดเอว'],back pain,['back pain']
+16,มะเร็งต่อมน้ำเหลือง,brain cancer,ผิวคล้ำผิดปกติ,"['ผิวคล้ำผิดปกติ','ผิวคล้ำ']",darkened skin,['darkened skin']
+17,มะเร็งสมอง,skin cancer,เจ็บเต้านม,"['เจ็บเต้านม', 'เจ็บเต้า', 'เจ็บนม']",breast pain,['breast pain']
+18,มะเร็งผิวหนัง,intestinal cancer,ท้องอืด,"['ท้องอืด', 'อาการอืดท้อง', 'อืด']",bloating,"['bloating', 'abdominal bloating', 'bloated']"
+19,มะเร็งลำไส้,bile duct cancer,ท้องผูกเรื้อรัง,"['ท้องผูกเรื้อรัง', 'ท้องผูก']",chronic constipation,"['chronic constipation', 'constipation']"
+20,มะเร็งท่อน้ำดี,colorectal cancer,อาหารไม่ย่อย,['อาหารไม่ย่อย'],indigestion,['indigestion']
+21,มะเร็งลำไส้ใหญ่และทวารหนัก,melanoma,กลืนลำบาก,"['กลืนลำบาก', 'กลืนอาหารลำบาก', 'กลืนยาก']",difficulty swallowing,"['difficulty swallowing', 'dysphagia']"
+22,มะเร็งผิวหนังชนิดเมลาโนมา,hodgkin lymphoma,ปวดท้องเรื้อรัง,['ปวดท้องเรื้อรัง'],chronic abdominal pain,['chronic abdominal pain']
+23,มะเร็งต่อมน้ำเหลืองชนิดนอนฮอดจ์กิน,acute leukemia,อาเจียน,"['อาเจียน', 'อาเจียนเป็นเลือด', 'อ้วก']",vomiting blood,"['vomiting blood', 'vomiting', 'emesis']"
+24,มะเร็งเม็ดเลือดขาวชนิดเฉียบพลัน,bone cancer,ถ่ายเป็นเลือด,"['ถ่ายเป็นเลือด','อุจจาระเป็นเลือด', 'อึเป็นเลือด', 'ขี้เป็นเลือด', 'อุจจาระ', 'ขี้', 'ถ่าย']",bloody stools,"['bloody stools', 'blood in stool', 'melena']"
+25,มะเร็งกระดูก,central nervous system cancer,ไอเรื้อรัง,"['ไอเรื้อรัง', 'ไอ', 'ไอต่อเนื่อง', 'ไอแห้ง']",chronic cough,"['chronic cough', 'cough', 'persistent cough', 'dry cough']"
+26,มะเร็งสมองและระบบประสาทกลาง,kidney cancer,ไอเป็นเลือด,['ไอเป็นเลือด'],coughing up blood,['coughing up blood']
+27,มะเร็งไต,uterine cancer,เสียงแหบ,['เสียงแหบ'],hoarseness,['hoarseness']
+28,มะเร็งมดลูก,gallbladder cancer,หายใจลำบาก,"['หายใจลำบาก', 'หายใจไม่อิ่ม', 'หายใจ', 'หายใจเข้า', 'หายใจเข้าลำบาก', 'หายใจไม่ทั่ว', 'หายใจไม่']",shortness of breath,"['shortness of breath', 'dyspnea']"
+29,มะเร็งถุงน้ำดี,spinal cord cancer,เจ็บหน้าอก,"['เจ็บหน้าอก', 'เเน่นหน้าอก']",chest pain,['chest pain']
+30,มะเร็งกระดูกสันหลัง,eye cancer,เลือดออกผิดปกติจากช่องคลอด,"['เลือดออกผิดปกติจากช่องคลอด', 'เลือดออกจากช่องคลอด', 'เลือดออกผิดปกติจากอวัยวะเพศ', 'เลือดออกจากอวัยวะเพศ', 'เลือดไหล']",vaginal bleeding,"['vaginal bleeding', 'bleeding from vagina', 'abnormal bleeding']"
+31,มะเร็งลูกตา,vaginal cancer,ตกขาวผิดปกติ,"['ตกขาวผิดปกติ', 'ตกขาว']",vaginal discharge,['vaginal discharge']
+32,มะเร็งเยื่อบุช่องคลอด,penile cancer,ปัสสาวะบ่อย,['ปัสสาวะบ่อย'],frequent urination,['frequent urination']
+33,มะเร็งเยื่อบุอวัยวะเพศชาย,vulvar cancer,ปัสสาวะแสบขัด,"['ปัสสาวะแสบขัด', 'ฉี่แสบขัด']",urinary tract infection,"['urinary tract infection', 'dysuria']"
+34,มะเร็งเยื่อบุอวัยวะเพศหญิง,adrenal gland cancer,ปัสสาวะเป็นเลือด,"['ปัสสาวะเป็นเลือด', 'ฉี่เป็นเลือด']",hematuria,['hematuria']
+35,มะเร็งต่อมหมวกไต,salivary gland cancer,อัณฑะโตผิดปกติ,"['อัณฑะโตผิดปกติ', 'ไข่โตผิดปกติ', 'ไข่ผิดปกติ', 'อัณฑะผิดปกติ', 'อัณฑะ']",enlarged testicles,['enlarged testicles']
+36,มะเร็งต่อมน้ำลาย,ovarian cyst cancer,แผลเรื้อรัง,"['แผลเรื้อรัง', 'เป็นแผล', 'แผล']",skin ulcers,"['skin ulcers', 'ulcers']"
+37,มะเร็งถุงน้ำรังไข่,obese,ไฝหรือปานเปลี่ยนแปลง,"['ไฝหรือปานเปลี่ยนแปลง', 'ไฝเปลี่ยนแปลง', 'ปานเปลี่ยนแปลง']",changing moles or freckles,['changing moles or freckles']
+38,มะเร็งกล่องเสียง,hypertension,มีตุ่มหรือก้อนใต้ผิวหนัง,"['มีตุ่มหรือก้อนใต้ผิวหนัง', 'มีตุ่มใต้ผิวหนัง', 'มีก้อนใต้ผิวหนัง', 'ก้อน', 'ตุ่ม', 'มีก้อน', 'มีตุ่ม', 'ตื่ง', 'มีตื่ง']",lumps or bumps under the skin,['lumps or bumps under the skin']
+39,มะเร็งไขกระดูก,heart disease,ปวดศีรษะ,"['ปวดศีรษะ', 'ปวดหัว']",headache,['headache']
+40,มะเร็งเม็ดเลือด,fat,มองเห็นภาพผิดปกติ,"['มองเห็นภาพผิดปกติ', 'มองไม่เห็น']",vision problems,['vision problems']
+41,โรคความดันโลหิต,heart valve regurgitation,ชัก,['ชัก'],seizures,['seizures']
+42,โรคหัวใจ,diabetes,ปวด,"['ปวด', 'ปวดร้าว']",obese,"['fat', 'obese']"
+43,โรคอ้วน,diabet,ปวดหลัง,['ปวดหลัง'],heart failure,"['heart beats fast', 'beats faintly', 'arrhythmia', 'heart beats', 'beats hard', 'beats fast', 'beats slow', 'stopped beating', 'beats fast', 'stopped beating','heart failure']"
+44,ลิ้นหัวใจรั่ว,type 1,หัวใจผิดปกติ,"['หัวใจผิดปกติ','หัวใจเต้นเร็ว', 'เต้นอ่อนล้า', 'ผิดจังหวะ', 'ใจเต้น', 'เต้นแรง', 'เต้นเร็ว', 'เต้นช้า', 'หยุดเต้น', 'เต้นรัว', 'หยุดเต้น']",angry,['angry']
+45,โรคเบาหวาน,type 2,ตกใจ,['ตกใจ'],stress,"['stress', 'stressful']"
+46,หัวใจวาย,type 3,มือสั่น,['มือสั่น'],panic,['panic']
+47,หัวใจวา,heart failure,โมโห,['โมโห'],anxiety,['anxiety']
+48,หัวใจ,stroke,มึน,"['มึน', 'งง']",week,['week']
+49,,strokes,,,,
+50,,brain damage,,,,
+51,,,,,,
+52,,,,,,
+53,,,,,,
+54,,,,,,
+55,,,,,,
+56,,,,,,
+57,,,,,,
+58,,,,,,
+59,,,,,,
+60,,,,,,
+61,,,,,,
+62,,,,,,
+63,,,,,,
+64,,,,,,
+65,,,,,,
+66,,,,,,
+67,,,,,,
+68,,,,,,
+69,,,,,,
+70,,,,,,
+71,,,,,,
+72,,,,,,
+73,,,,,,
+74,,,,,,
+75,,,,,,
+76,,,,,,
+77,,,,,,
+78,,,,,,
+79,,,,,,
+80,,,,,,
+81,,,,,,
+82,,,,,,
+83,,,,,,
+84,,,,,,
+85,,,,,,
+86,,,,,,
+87,,,,,,
+88,,,,,,
+89,,,,,,
+90,,,,,,
+91,,,,,,
+92,,,,,,
+93,,,,,,
+94,,,,,,
+95,,,,,,
+96,,,,,,
+97,,,,,,
+98,,,,,,
+99,,,,,,

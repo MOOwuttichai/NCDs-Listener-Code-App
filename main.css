@@ -1,0 +1,32 @@
+/* Buttons style for item selections such as categories and tags. */
+.item-btn {
+  background-color: #cfcdcd;
+  color: rgb(24, 24, 24);
+  border-radius: 5px;
+  border: none;
+  padding: 2px;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+}
+
+.item-x-btn {
+  display: inline-block;
+  border: none;
+  background-color: #cfcdcd;
+  box-shadow: none;
+  margin-left: 1px;
+  border-radius: 50%;
+  color: rgb(24, 24, 24);
+  font-size: small;
+  line-height: 1.28;
+  transition: 0.3s;
+}
+.item-x-btn:hover {
+  background-color: firebrick;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.item-x-btn:focus {
+  outline: none;
+}
